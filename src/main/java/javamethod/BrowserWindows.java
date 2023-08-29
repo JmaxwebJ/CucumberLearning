@@ -24,6 +24,7 @@ public class BrowserWindows {
 	@And("User close the newly opened tab")
 	public void user_close_the_newly_opened_tab(WebDriver driver) {
 	    BrowserWindowsMethods.closeNewTab(driver);
+	    System.out.println("Test");
 	}
 
 	@And("User opened the new Window")

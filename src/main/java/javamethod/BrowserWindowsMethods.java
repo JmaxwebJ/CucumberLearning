@@ -8,6 +8,7 @@ public class BrowserWindowsMethods {
 
 	public static void newTabs(WebDriver driver) {
 	
+		System.out.println("Change after git push");
 	
 	}
 
