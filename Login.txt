@@ -1,0 +1,31 @@
+Feature: Login functionality for the application
+
+  @All @LoginTest
+  Scenario: Valid Login with correct email and password
+    Given User is on the login page
+    When User enters a valid email address "vaibhav@rvsmedia.com"
+    And User enters a valid password "Test123@"
+    And User selects the "Remember me" checkbox
+    And User clicks on the "Login" button
+    Then User should be redirected to the homepage
+
+  @All @InvalidLoginTest
+  Scenario: Invalid Login with incorrect email or password
+    Given User is on the login page
+    When User enters an invalid email address "invaliduser@example.com"
+    And User enters an incorrect password "wrongpassword"
+    And User clicks on the "Login" button
+    Then User should see an error message "Login failed. Please check your credentials.
+"
+
+  @All @ForgotPasswordTest
+  Scenario: Navigate to Forgot Password page
+    Given User is on the login page
+    When User clicks on the "Forgot password?" button
+    Then User should be redirected to the forgot password page
+
+  @All @RegisterAccountTest
+  Scenario: Navigate to Register Account page
+    Given User is on the login page
+    When User clicks on the "Register Account" button
+    Then User should be redirected to the registration page
